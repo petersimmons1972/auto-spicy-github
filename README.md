@@ -15,7 +15,7 @@ Say "update the github documentation" to Claude Code and it:
 ## Install
 
 ```bash
-git clone https://github.com/petersimmons-dev/auto-spicy-github
+git clone https://github.com/petersimmons1972/auto-spicy-github
 cd auto-spicy-github
 ./install.sh
 ```
