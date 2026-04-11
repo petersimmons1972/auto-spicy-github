@@ -113,8 +113,20 @@ This skill enforces these universal palette rules:
 
 - Use exactly the colors defined in your `VISUAL-IDENTITY.md`. Do not improvise new colors.
 - Every color used must have a named role (Primary, Accent, Text, Muted, etc.)
-- Contrast ratio >= 4.5:1 on all text against its background (WCAG AA)
+- Contrast ratio >= 4.5:1 on all text against its background (WCAG AA) — same threshold as Section 1 checklist item 6
 - When in doubt whether a color is legible: it probably is not. Use a higher-contrast alternative.
+
+**If `VISUAL-IDENTITY.md` is absent or has no palette defined**, use this neutral fallback palette until one is established:
+
+| Role | Hex | Usage |
+|------|-----|-------|
+| Background | `#1a1a2e` | Dark navy — page/chart backgrounds |
+| Primary text | `#e8e8f0` | Near-white — headings, key values |
+| Secondary text | `#a0a0b8` | Mid-gray — body text, descriptions |
+| Muted | `#606078` | Dark gray — captions, footnotes |
+| Accent | `#6c8ebf` | Steel blue — highlights, calls to action |
+
+Do not use these defaults as a permanent palette — they exist only to unblock SVG creation until `VISUAL-IDENTITY.md` is authored via the `art-direction` skill.
 
 **Accent color usage:** Accent colors should mark insight and emphasis, not decoration. When an accent color appears, it should mean "pay attention here." Using it for decorative borders or background fills dilutes the signal.
 
@@ -194,6 +206,7 @@ Scale the canvas to the content, not the other way around. A 4-bar chart should 
 
 - Fallback defaults must **fail loud, not silent**. Never use a plausible-looking hardcoded number when data is missing.
 - Every missing-data state must produce a visible "DATA MISSING" label or equivalent — not a blank space.
+- **Partial data:** If >= 50% of data points are present, render the known points and mark missing entries with a hatched or grayed placeholder labeled "No data." If < 50% of data points are present, suppress the chart entirely and emit a "DATA MISSING" label in its place.
 - **Triage by decision impact.** A chart that could mislead a real decision is higher priority than cosmetic issues.
 
 ---
@@ -204,7 +217,7 @@ For illustrations, posters, and visual content:
 
 1. **Before creating:** Read this entire skill. All rules are hard requirements.
 2. **State the rendering context** in your plan: target platform, viewBox dimensions, effective rendering width.
-3. **Create the artwork** following Sections 1-3 above.
+3. **Create the artwork** following Sections 1-5 above.
 4. **Verify** against the Post-Creation Checklist (Section 1).
 5. **Human reviews** the rendered output as final gate.
 

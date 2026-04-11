@@ -17,7 +17,7 @@ Which repo? If not specified in the user's message, ask:
 
 > "Which repo should I update? Or say 'all' to run on every repo in your current working directory."
 
-If "all": run for each repo found, in whatever order makes sense for the user's project structure.
+If "all": scan direct subdirectories of the current working directory for folders containing a `.git` directory. Run for each one found, in alphabetical order by directory name.
 
 ---
 
@@ -30,6 +30,8 @@ Read `docs/assets/VISUAL-IDENTITY.md` in the target repo.
 ```
 Skill("art-direction")
 ```
+
+**If the `art-direction` skill is unavailable:** Ask the user to create `docs/assets/VISUAL-IDENTITY.md` manually using the template at `templates/VISUAL-IDENTITY.md` in the auto-spicy-github repo, then re-run this pipeline.
 
 ---
 
@@ -54,7 +56,7 @@ Visual requirements by page type:
 | Contributing / philosophy | 1 | Poster/artwork |
 | Changelog | 0 | No visuals required |
 
-Pages with 0 visuals (excluding changelog) get a `<!-- VISUAL: [description] -->` placeholder inserted and a GitHub Issue filed.
+Pages with 0 visuals (excluding changelog) get a `<!-- VISUAL: [description] -->` placeholder inserted. File a GitHub Issue in the target repo using: title "docs: [page name] missing required visual", body listing the page path and visual type needed, label `documentation`. Use `gh issue create --repo [owner/repo] --title "..." --body "..." --label documentation`.
 
 Pages over 400 lines get flagged in the audit table with action "SPLIT" — they will be broken into topic-driven sub-pages in Step 4.
 
@@ -135,6 +137,7 @@ Before fetching, confirm the image is:
 ### Fetch and commit
 
 1. WebFetch the direct image URL (full resolution, `.jpg` or `.png`)
+   - If the fetch fails (network error, 404, or non-image response): log the failure, skip this image, and fall back to the SVG fallback path below — do not retry the same URL
 2. Save to `docs/assets/posters/[page-slug].jpg`
 3. Replace `<!-- VISUAL: ... -->` in the doc with:
    ```markdown
@@ -161,7 +164,7 @@ Review all updated pages with an advertising strategist's eye:
 - **Visual count compliance:** Is every non-changelog page above the minimum? Any missing placeholders?
 - **One defensible idea per page:** What is the reader supposed to remember after reading each page? If you cannot answer that in one sentence, the page needs more focus.
 
-Fix issues inline before committing.
+Fix issues inline before committing. If a quality issue requires regenerating an SVG, return to Step 5 and regenerate only that asset. If it requires re-fetching an image, return to Step 6 for that page only. Do not re-run the full pipeline — targeted fixes only. If a quality issue cannot be resolved inline (e.g., the source data needed for a chart is unavailable), insert a `<!-- VISUAL: [description of unresolvable issue] -->` placeholder, file a GitHub Issue, and continue to commit.
 
 ---
 

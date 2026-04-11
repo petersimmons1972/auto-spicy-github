@@ -17,14 +17,16 @@ Before running the discovery conversation, check if the user has a design skill 
 
 Scan `~/.claude/skills/` for any skill with "design", "ui", "ux", or "visual" in the name or description.
 
-If found, prompt:
+If multiple matching skills are found, list them all and ask the user to choose one before continuing.
+
+If one is found, prompt:
 
 > "I found [skill-name] installed. Would you like to use it as your visual design reference? Options:
 > - **yes** — use [skill-name] as the design foundation, pull palette and typography from it
 > - **no** — I'll ask you questions and build a custom identity from scratch
 > - **both** — ask me the questions, then we'll pick specific options from [skill-name] that match your answers"
 
-**Recommended default:** `ui-ux-pro-max` from skills.sh gives access to 50 styles, 21 palettes, and 50 font pairings. It's the recommended starting point if you do not have a strong visual preference. See `docs/design-standards.md` for install instructions.
+**Recommended default:** `ui-ux-pro-max` from skills.sh gives access to 50 styles, 21 palettes, and 50 font pairings. It's the recommended starting point if you do not have a strong visual preference. See the [skills.sh listing](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) for install instructions.
 
 If no design skill is found, proceed directly to Step 2.
 
@@ -104,12 +106,16 @@ Based on the discovery answers, author `docs/assets/VISUAL-IDENTITY.md` using th
 **Palette derivation rules:**
 - Derive from discovery answers. If the user said "dark and technical" — dark background, high-contrast text, minimal accent.
 - If no color preference was given and no design skill is installed, pick a purposeful palette based on the project's domain (dev tool? security? consumer app?) rather than defaulting to generic gray.
-- Always include at least 4 color roles: Background, Primary text, Secondary text, Accent.
+- Always include all 5 color roles: Background, Primary text, Secondary text, Muted, Accent. Muted is for captions/footnotes and may be a lighter version of Secondary text — but it must be present.
 - Every color must pass WCAG AA contrast (4.5:1) against its background.
+
+**If the user chose "both" in Step 1:** Read the referenced design skill file. Identify its palette and typography sections. Select the style/palette option that best aligns with the user's discovery answers. Note the source skill and the specific option selected in the VISUAL-IDENTITY.md under Existing assets (e.g., "Palette: Cascade Night from ui-ux-pro-max, style #14").
 
 ---
 
-## Step 4: Commit VISUAL-IDENTITY.md
+## Step 4: Write and Commit VISUAL-IDENTITY.md
+
+Write the synthesized content to `docs/assets/VISUAL-IDENTITY.md` using the Write tool or equivalent. Create the directory if it does not exist. Then commit:
 
 ```bash
 mkdir -p docs/assets
@@ -117,7 +123,13 @@ git add docs/assets/VISUAL-IDENTITY.md
 git commit -m "docs: establish visual identity for [repo-name]"
 ```
 
-Then return to the `github-docs` pipeline (Step 3: Audit).
+Signal completion by outputting:
+
+```
+VISUAL-IDENTITY.md authored at docs/assets/VISUAL-IDENTITY.md — art-direction complete
+```
+
+If this skill was invoked from the `github-docs` pipeline, the pipeline will now continue from Step 3 (Audit). If running standalone, the skill is complete.
 
 ---
 
