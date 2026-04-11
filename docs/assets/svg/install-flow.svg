@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="100%">
+  <defs>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111d2e"/>
+      <stop offset="100%" stop-color="#0e1520"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. BACKGROUND -->
+  <rect x="0" y="0" width="750" height="280" fill="#080c14"/>
+
+  <!-- 2. GEOMETRY: panel surfaces -->
+  <!-- Panel 1: CLONE -->
+  <rect x="20" y="48" width="196" height="188" fill="url(#panelGrad)"/>
+  <!-- Panel 2: INSTALL -->
+  <rect x="277" y="48" width="196" height="188" fill="url(#panelGrad)"/>
+  <!-- Panel 3: RUN -->
+  <rect x="534" y="48" width="196" height="188" fill="url(#panelGrad)"/>
+
+  <!-- Arrow 1: between panel 1 and panel 2 -->
+  <!-- Shaft: x 218 to 272, y=141 -->
+  <rect x="218" y="138" width="46" height="6" fill="#0af0c8"/>
+  <!-- Arrowhead: triangle pointing right, tip at x=277 -->
+  <polygon points="273,128 283,141 273,154" fill="#0af0c8"/>
+
+  <!-- Arrow 2: between panel 2 and panel 3 -->
+  <!-- Shaft: x 475 to 529, y=141 -->
+  <rect x="475" y="138" width="46" height="6" fill="#0af0c8"/>
+  <!-- Arrowhead: triangle pointing right, tip at x=534 -->
+  <polygon points="530,128 540,141 530,154" fill="#0af0c8"/>
+
+  <!-- 3. STROKES: panel borders -->
+  <rect x="20" y="48" width="196" height="188" fill="none" stroke="#3d5068" stroke-width="1"/>
+  <rect x="277" y="48" width="196" height="188" fill="none" stroke="#3d5068" stroke-width="1"/>
+  <rect x="534" y="48" width="196" height="188" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Accent top-edge highlight on each panel -->
+  <line x1="20" y1="48" x2="216" y2="48" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="277" y1="48" x2="473" y2="48" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="534" y1="48" x2="730" y2="48" stroke="#0af0c8" stroke-width="2"/>
+
+  <!-- 4. TEXT -->
+
+  <!-- Top-left installation label -->
+  <text x="20" y="28" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" letter-spacing="2">INSTALLATION</text>
+
+  <!-- PANEL 1: CLONE -->
+  <!-- Step number -->
+  <text x="32" y="76" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#0af0c8" letter-spacing="1">01 / CLONE</text>
+  <!-- Divider hint -->
+  <line x1="32" y1="84" x2="204" y2="84" stroke="#3d5068" stroke-width="1"/>
+  <!-- Command line 1 -->
+  <text x="32" y="110" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">git clone</text>
+  <!-- Command line 2: URL split across two lines for width -->
+  <text x="32" y="128" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">https://github.com/</text>
+  <text x="32" y="146" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">petersimmons1972/</text>
+  <text x="32" y="164" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">auto-spicy-github</text>
+
+  <!-- PANEL 2: INSTALL -->
+  <text x="289" y="76" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#0af0c8" letter-spacing="1">02 / INSTALL</text>
+  <line x1="289" y1="84" x2="461" y2="84" stroke="#3d5068" stroke-width="1"/>
+  <!-- Primary command -->
+  <text x="289" y="118" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="13" fill="#a8bcd0">./install.sh</text>
+  <!-- Sub-label -->
+  <text x="289" y="148" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#7a9ab8">3 skills -&gt;</text>
+  <text x="289" y="165" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#7a9ab8">~/.claude/skills/</text>
+
+  <!-- PANEL 3: RUN -->
+  <text x="546" y="76" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#0af0c8" letter-spacing="1">03 / RUN</text>
+  <line x1="546" y1="84" x2="718" y2="84" stroke="#3d5068" stroke-width="1"/>
+  <!-- Command (user types this in Claude Code) -->
+  <text x="546" y="112" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">update the github</text>
+  <text x="546" y="130" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0">documentation</text>
+  <!-- Sub-label -->
+  <text x="546" y="158" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#7a9ab8">in any Claude Code</text>
+  <text x="546" y="175" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#7a9ab8">session</text>
+
+  <!-- Bottom baseline label -->
+  <text x="20" y="260" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#3d5068">auto-spicy-github -- zero to running in three steps</text>
+</svg>

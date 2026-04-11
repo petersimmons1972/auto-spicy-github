@@ -1,0 +1,442 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" width="100%">
+  <defs>
+    <!-- Node fill gradient: subtle left-to-right -->
+    <linearGradient id="nodeFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e1520" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0e1520" stop-opacity="0.7"/>
+    </linearGradient>
+    <!-- Accent glow gradient for connector arrows -->
+    <linearGradient id="connectorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0af0c8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0af0c8" stop-opacity="0.55"/>
+    </linearGradient>
+    <!-- Input node gradient — slightly warmer -->
+    <linearGradient id="inputFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e1a26" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0e1520" stop-opacity="0.7"/>
+    </linearGradient>
+    <!-- Output node gradient — accent tint -->
+    <linearGradient id="outputFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#061e1c" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#071a17" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: BACKGROUND                                          -->
+  <!-- ============================================================ -->
+
+  <!-- Root background -->
+  <rect x="0" y="0" width="750" height="420" fill="#080c14"/>
+
+  <!-- Subtle grid lines — horizontal -->
+  <line x1="0" y1="105" x2="750" y2="105" stroke="#1a2535" stroke-width="1"/>
+  <line x1="0" y1="210" x2="750" y2="210" stroke="#1a2535" stroke-width="1"/>
+  <line x1="0" y1="315" x2="750" y2="315" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- Subtle grid lines — vertical -->
+  <line x1="150" y1="0" x2="150" y2="420" stroke="#1a2535" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="420" stroke="#1a2535" stroke-width="1"/>
+  <line x1="450" y1="0" x2="450" y2="420" stroke="#1a2535" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="420" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- Top bar / header strip -->
+  <rect x="0" y="0" width="750" height="58" fill="#0e1520" opacity="0.92"/>
+
+  <!-- Bottom bar / footer strip -->
+  <rect x="0" y="380" width="750" height="40" fill="#0e1520" opacity="0.80"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: GEOMETRY — CONNECTOR PATHS                         -->
+  <!-- ============================================================ -->
+
+  <!-- Connector track baseline — full width accent line at y=210 -->
+  <line x1="25" y1="210" x2="725" y2="210" stroke="#3d5068" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Connector segment 1: node 1 right edge (125) to node 2 left edge (170) -->
+  <!-- Angular elbow: horizontal exit, horizontal entry -->
+  <polyline points="125,210 170,210" fill="none" stroke="url(#connectorGrad)" stroke-width="2.5"/>
+  <!-- Arrowhead at 170 -->
+  <polygon points="170,210 162,205 162,215" fill="#0af0c8"/>
+
+  <!-- Connector segment 2: node 2 right (270) to node 3 left (325) -->
+  <polyline points="270,210 325,210" fill="none" stroke="url(#connectorGrad)" stroke-width="2.5"/>
+  <polygon points="325,210 317,205 317,215" fill="#0af0c8"/>
+
+  <!-- Connector segment 3: node 3 right (425) to node 4 left (480) -->
+  <polyline points="425,210 480,210" fill="none" stroke="url(#connectorGrad)" stroke-width="2.5"/>
+  <polygon points="480,210 472,205 472,215" fill="#0af0c8"/>
+
+  <!-- Connector segment 4: node 4 right (580) to node 5 left (625) -->
+  <polyline points="580,210 625,210" fill="none" stroke="url(#connectorGrad)" stroke-width="2.5"/>
+  <polygon points="625,210 617,205 617,215" fill="#0af0c8"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2 cont: NODE RECTANGLES                               -->
+  <!-- (drawn after connectors so nodes sit atop the track line)   -->
+  <!-- Node centers: x = 75, 220, 375, 530, 675 ; y_center = 210  -->
+  <!-- Rect: x = center_x - 50, y = 175, width = 100, height = 70 -->
+  <!-- ============================================================ -->
+
+  <!-- Node 1 — say the phrase (input) -->
+  <!-- center: 75,210 | rect: 25,175 100x70 -->
+  <rect x="25" y="175" width="100" height="70" fill="url(#inputFill)"/>
+  <!-- accent border — left edge highlighted -->
+  <line x1="25" y1="175" x2="25" y2="245" stroke="#0af0c8" stroke-width="3"/>
+  <!-- full border -->
+  <rect x="25" y="175" width="100" height="70" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Node 2 — visual identity -->
+  <!-- center: 220,210 | rect: 170,175 100x70 -->
+  <rect x="170" y="175" width="100" height="70" fill="url(#nodeFill)"/>
+  <line x1="170" y1="175" x2="170" y2="245" stroke="#0af0c8" stroke-width="2"/>
+  <rect x="170" y="175" width="100" height="70" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Node 3 — prose + SVGs -->
+  <!-- center: 375,210 | rect: 325,175 100x70 -->
+  <rect x="325" y="175" width="100" height="70" fill="url(#nodeFill)"/>
+  <line x1="325" y1="175" x2="325" y2="245" stroke="#0af0c8" stroke-width="2"/>
+  <rect x="325" y="175" width="100" height="70" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Node 4 — public domain art -->
+  <!-- center: 530,210 | rect: 480,175 100x70 -->
+  <rect x="480" y="175" width="100" height="70" fill="url(#nodeFill)"/>
+  <line x1="480" y1="175" x2="480" y2="245" stroke="#0af0c8" stroke-width="2"/>
+  <rect x="480" y="175" width="100" height="70" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Node 5 — committed (output) -->
+  <!-- center: 675,210 | rect: 625,175 100x70 -->
+  <rect x="625" y="175" width="100" height="70" fill="url(#outputFill)"/>
+  <!-- accent border — right edge highlighted for output -->
+  <line x1="725" y1="175" x2="725" y2="245" stroke="#0af0c8" stroke-width="3"/>
+  <rect x="625" y="175" width="100" height="70" fill="none" stroke="#0af0c8" stroke-width="1"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2 cont: ACCENT DECORATIONS                            -->
+  <!-- ============================================================ -->
+
+  <!-- Step number chips — small rect above each node -->
+  <!-- Node 1 chip: centered at 75, y top = 155 -->
+  <rect x="62" y="152" width="26" height="16" fill="#0af0c8"/>
+  <!-- Node 2 chip -->
+  <rect x="207" y="152" width="26" height="16" fill="#3d5068"/>
+  <!-- Node 3 chip -->
+  <rect x="362" y="152" width="26" height="16" fill="#3d5068"/>
+  <!-- Node 4 chip -->
+  <rect x="517" y="152" width="26" height="16" fill="#3d5068"/>
+  <!-- Node 5 chip -->
+  <rect x="662" y="152" width="26" height="16" fill="#0af0c8"/>
+
+  <!-- Horizontal rule under header -->
+  <line x1="0" y1="58" x2="750" y2="58" stroke="#0af0c8" stroke-width="1" opacity="0.6"/>
+
+  <!-- Horizontal rule above footer -->
+  <line x1="0" y1="380" x2="750" y2="380" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Corner marks — top left -->
+  <line x1="0" y1="0" x2="18" y2="0" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="0" y1="0" x2="0" y2="18" stroke="#0af0c8" stroke-width="2"/>
+  <!-- top right -->
+  <line x1="750" y1="0" x2="732" y2="0" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="750" y1="0" x2="750" y2="18" stroke="#0af0c8" stroke-width="2"/>
+  <!-- bottom left -->
+  <line x1="0" y1="420" x2="18" y2="420" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="0" y1="420" x2="0" y2="402" stroke="#0af0c8" stroke-width="2"/>
+  <!-- bottom right -->
+  <line x1="750" y1="420" x2="732" y2="420" stroke="#0af0c8" stroke-width="2"/>
+  <line x1="750" y1="420" x2="750" y2="402" stroke="#0af0c8" stroke-width="2"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: STROKES (already applied inline above)             -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: TEXT                                               -->
+  <!-- ============================================================ -->
+
+  <!-- === HEADER === -->
+  <!-- "GITHUB-DOCS PIPELINE" — top label, chrome, all caps, monospace -->
+  <!-- Centered at x=375, y=37 -->
+  <text
+    x="375" y="37"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="18"
+    font-weight="400"
+    fill="#a8bcd0"
+    text-anchor="middle"
+    letter-spacing="4"
+  >GITHUB-DOCS PIPELINE</text>
+
+  <!-- Right side: version tag -->
+  <text
+    x="726" y="37"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#3d5068"
+    text-anchor="end"
+    letter-spacing="1"
+  >v1.0</text>
+
+  <!-- Left side: classification-style label -->
+  <text
+    x="24" y="37"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#3d5068"
+    text-anchor="start"
+    letter-spacing="1"
+  >PIPELINE OVERVIEW</text>
+
+  <!-- === STEP NUMBER CHIPS === -->
+  <!-- Chip text: centered on each chip rect -->
+  <!-- Node 1: chip rect 62,152 w26 h16 — center 75,160 -->
+  <text
+    x="75" y="163"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    font-weight="700"
+    fill="#080c14"
+    text-anchor="middle"
+  >01</text>
+
+  <!-- Node 2: chip center 220,160 -->
+  <text
+    x="220" y="163"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    font-weight="700"
+    fill="#a8bcd0"
+    text-anchor="middle"
+  >02</text>
+
+  <!-- Node 3: chip center 375,160 -->
+  <text
+    x="375" y="163"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    font-weight="700"
+    fill="#a8bcd0"
+    text-anchor="middle"
+  >03</text>
+
+  <!-- Node 4: chip center 530,160 -->
+  <text
+    x="530" y="163"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    font-weight="700"
+    fill="#a8bcd0"
+    text-anchor="middle"
+  >04</text>
+
+  <!-- Node 5: chip center 675,160 -->
+  <text
+    x="675" y="163"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    font-weight="700"
+    fill="#080c14"
+    text-anchor="middle"
+  >05</text>
+
+  <!-- === NODE PRIMARY LABELS === -->
+  <!-- Each node: width 100px, center_x varies, y_center=210 -->
+  <!-- Two lines per node: line 1 at y=204, line 2 at y=220 -->
+
+  <!-- Node 1: "say the" / "phrase" — center x=75 -->
+  <text
+    x="75" y="204"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#0af0c8"
+    text-anchor="middle"
+    font-weight="700"
+  >say the</text>
+  <text
+    x="75" y="220"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#0af0c8"
+    text-anchor="middle"
+    font-weight="700"
+  >phrase</text>
+
+  <!-- Node 2: "visual" / "identity" — center x=220 -->
+  <text
+    x="220" y="204"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >visual</text>
+  <text
+    x="220" y="220"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >identity</text>
+
+  <!-- Node 3: "prose +" / "SVGs" — center x=375 -->
+  <text
+    x="375" y="204"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >prose +</text>
+  <text
+    x="375" y="220"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >SVGs</text>
+
+  <!-- Node 4: "public" / "domain art" — center x=530 -->
+  <text
+    x="530" y="204"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >public</text>
+  <text
+    x="530" y="220"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#e2eaf6"
+    text-anchor="middle"
+    font-weight="700"
+  >domain art</text>
+
+  <!-- Node 5: "committed" — center x=675 -->
+  <text
+    x="675" y="204"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#0af0c8"
+    text-anchor="middle"
+    font-weight="700"
+  >committed</text>
+  <!-- Single word — second line blank; add git icon substitute -->
+  <text
+    x="675" y="220"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+  >to repo</text>
+
+  <!-- === NODE SUBLABELS (below nodes, y=255 to y=340) === -->
+  <!-- Small descriptive annotation per node -->
+
+  <!-- Node 1 sublabel: "USER INPUT" -->
+  <text
+    x="75" y="258"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >USER INPUT</text>
+
+  <!-- Node 2 sublabel: "ART DIRECTION" -->
+  <text
+    x="220" y="258"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >ART DIRECTION</text>
+
+  <!-- Node 3 sublabel: "GENERATION" -->
+  <text
+    x="375" y="258"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >GENERATION</text>
+
+  <!-- Node 4 sublabel: "FETCH" -->
+  <text
+    x="530" y="258"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >FETCH</text>
+
+  <!-- Node 5 sublabel: "OUTPUT" -->
+  <text
+    x="675" y="258"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#7a9ab8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >OUTPUT</text>
+
+  <!-- === EXTENDED DETAIL BLOCK (lower panel) === -->
+  <!-- Brief descriptor line per node — y = 290 to 340 -->
+  <!-- Vertical dividers between columns -->
+  <line x1="148" y1="275" x2="148" y2="360" stroke="#1a2535" stroke-width="1"/>
+  <line x1="298" y1="275" x2="298" y2="360" stroke="#1a2535" stroke-width="1"/>
+  <line x1="451" y1="275" x2="451" y2="360" stroke="#1a2535" stroke-width="1"/>
+  <line x1="604" y1="275" x2="604" y2="360" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- Detail text, two lines each, centered on node x -->
+  <!-- Node 1 -->
+  <text x="75" y="294" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">one sentence</text>
+  <text x="75" y="312" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">doc request</text>
+
+  <!-- Node 2 -->
+  <text x="220" y="294" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">palette, fonts,</text>
+  <text x="220" y="312" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">visual spec</text>
+
+  <!-- Node 3 -->
+  <text x="375" y="294" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">README, hero,</text>
+  <text x="375" y="312" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">diagrams</text>
+
+  <!-- Node 4 -->
+  <text x="530" y="294" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">Wikimedia /</text>
+  <text x="530" y="312" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">archive.org</text>
+
+  <!-- Node 5 -->
+  <text x="675" y="294" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">git commit +</text>
+  <text x="675" y="312" font-family="'Share Tech Mono', 'JetBrains Mono', monospace" font-size="12" fill="#a8bcd0" text-anchor="middle">push</text>
+
+  <!-- === FOOTER === -->
+  <!-- Tool name left, tagline right -->
+  <text
+    x="24" y="398"
+    font-family="'Barlow Condensed', sans-serif"
+    font-size="13"
+    font-weight="600"
+    fill="#7a9ab8"
+    text-anchor="start"
+    letter-spacing="2"
+  >AUTO-SPICY-GITHUB</text>
+
+  <text
+    x="726" y="398"
+    font-family="'Share Tech Mono', 'JetBrains Mono', monospace"
+    font-size="12"
+    fill="#3d5068"
+    text-anchor="end"
+    letter-spacing="1"
+  >docs on autopilot</text>
+
+  <!-- Center footer separator pip -->
+  <rect x="371" y="392" width="8" height="8" fill="#0af0c8" opacity="0.6"/>
+
+</svg>

@@ -1,0 +1,472 @@
+<svg viewBox="0 0 750 380" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <defs>
+    <style>
+      text { font-family: 'Share Tech Mono', monospace; }
+    </style>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: BACKGROUNDS                                          -->
+  <!-- ============================================================ -->
+
+  <!-- Root background -->
+  <rect x="0" y="0" width="750" height="380" fill="#080c14"/>
+
+  <!-- Title strip -->
+  <rect x="0" y="0" width="750" height="38" fill="#0e1520"/>
+
+  <!-- Column header strip -->
+  <rect x="0" y="38" width="750" height="42" fill="#0a1118"/>
+
+  <!-- Row header column (all rows) -->
+  <rect x="0" y="80" width="185" height="300" fill="#0c1219"/>
+
+  <!-- DATA CELL BACKGROUNDS — row by row, column by column -->
+  <!-- Column x positions: 185, 298, 411, 524, 637 — width 113 each -->
+  <!-- Row y positions: 80, 140, 200, 260, 320 — height 60 each -->
+
+  <!-- ROW 0: Skill() auto-dispatch -->
+  <!-- Claude Code: AUTO -->
+  <rect x="185" y="80"  width="113" height="60" fill="#091a16"/>
+  <!-- Gemini CLI: AUTO -->
+  <rect x="298" y="80"  width="113" height="60" fill="#091a16"/>
+  <!-- Copilot CLI: AUTO -->
+  <rect x="411" y="80"  width="113" height="60" fill="#091a16"/>
+  <!-- Cursor/Windsurf: MANUAL -->
+  <rect x="524" y="80"  width="113" height="60" fill="#1a0d06"/>
+  <!-- Raw API: MANUAL -->
+  <rect x="637" y="80"  width="113" height="60" fill="#1a0d06"/>
+
+  <!-- ROW 1: Persistent skill loading -->
+  <!-- Claude Code: AUTO -->
+  <rect x="185" y="140" width="113" height="60" fill="#091a16"/>
+  <!-- Gemini CLI: AUTO -->
+  <rect x="298" y="140" width="113" height="60" fill="#091a16"/>
+  <!-- Copilot CLI: AUTO -->
+  <rect x="411" y="140" width="113" height="60" fill="#091a16"/>
+  <!-- Cursor/Windsurf: MANUAL -->
+  <rect x="524" y="140" width="113" height="60" fill="#1a0d06"/>
+  <!-- Raw API: MANUAL -->
+  <rect x="637" y="140" width="113" height="60" fill="#1a0d06"/>
+
+  <!-- ROW 2: art-direction auto-trigger -->
+  <!-- Claude Code: AUTO -->
+  <rect x="185" y="200" width="113" height="60" fill="#091a16"/>
+  <!-- Gemini CLI: AUTO -->
+  <rect x="298" y="200" width="113" height="60" fill="#091a16"/>
+  <!-- Copilot CLI: AUTO -->
+  <rect x="411" y="200" width="113" height="60" fill="#091a16"/>
+  <!-- Cursor/Windsurf: MANUAL -->
+  <rect x="524" y="200" width="113" height="60" fill="#1a0d06"/>
+  <!-- Raw API: MANUAL -->
+  <rect x="637" y="200" width="113" height="60" fill="#1a0d06"/>
+
+  <!-- ROW 3: git / gh operations -->
+  <!-- Claude Code: AUTO -->
+  <rect x="185" y="260" width="113" height="60" fill="#091a16"/>
+  <!-- Gemini CLI: AUTO -->
+  <rect x="298" y="260" width="113" height="60" fill="#091a16"/>
+  <!-- Copilot CLI: AUTO -->
+  <rect x="411" y="260" width="113" height="60" fill="#091a16"/>
+  <!-- Cursor/Windsurf: AUTO -->
+  <rect x="524" y="260" width="113" height="60" fill="#091a16"/>
+  <!-- Raw API: MANUAL -->
+  <rect x="637" y="260" width="113" height="60" fill="#1a0d06"/>
+
+  <!-- ROW 4: Web search + image fetch -->
+  <!-- Claude Code: AUTO -->
+  <rect x="185" y="320" width="113" height="60" fill="#091a16"/>
+  <!-- Gemini CLI: AUTO -->
+  <rect x="298" y="320" width="113" height="60" fill="#091a16"/>
+  <!-- Copilot CLI: AUTO -->
+  <rect x="411" y="320" width="113" height="60" fill="#091a16"/>
+  <!-- Cursor/Windsurf: LIMITED -->
+  <rect x="524" y="320" width="113" height="60" fill="#131108"/>
+  <!-- Raw API: LIMITED -->
+  <rect x="637" y="320" width="113" height="60" fill="#131108"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: GEOMETRY — cell accent bars (3px left edge markers)  -->
+  <!-- ============================================================ -->
+
+  <!-- AUTO accent bars: teal left edge, 3px wide, inset 1px from cell left -->
+  <!-- ROW 0 -->
+  <rect x="186" y="81"  width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="299" y="81"  width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="412" y="81"  width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <!-- ROW 1 -->
+  <rect x="186" y="141" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="299" y="141" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="412" y="141" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <!-- ROW 2 -->
+  <rect x="186" y="201" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="299" y="201" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="412" y="201" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <!-- ROW 3 — all 5 AUTO -->
+  <rect x="186" y="261" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="299" y="261" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="412" y="261" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="525" y="261" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <!-- ROW 4 — first 3 AUTO -->
+  <rect x="186" y="321" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="299" y="321" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+  <rect x="412" y="321" width="3" height="58" fill="#0af0c8" opacity="0.7"/>
+
+  <!-- MANUAL accent bars: orange left edge -->
+  <!-- ROW 0 -->
+  <rect x="525" y="81"  width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <rect x="638" y="81"  width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <!-- ROW 1 -->
+  <rect x="525" y="141" width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <rect x="638" y="141" width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <!-- ROW 2 -->
+  <rect x="525" y="201" width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <rect x="638" y="201" width="3" height="58" fill="#f06020" opacity="0.7"/>
+  <!-- ROW 3 — raw API only -->
+  <rect x="638" y="261" width="3" height="58" fill="#f06020" opacity="0.7"/>
+
+  <!-- LIMITED accent bars: muted amber left edge -->
+  <!-- ROW 4 — cursor and raw api -->
+  <rect x="525" y="321" width="3" height="58" fill="#c8a020" opacity="0.7"/>
+  <rect x="638" y="321" width="3" height="58" fill="#c8a020" opacity="0.7"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: STROKES — grid lines                                 -->
+  <!-- ============================================================ -->
+
+  <!-- Outer border -->
+  <rect x="0" y="0" width="750" height="380" fill="none" stroke="#3d5068" stroke-width="1"/>
+
+  <!-- Horizontal dividers -->
+  <!-- Title/header boundary -->
+  <line x1="0" y1="38"  x2="750" y2="38"  stroke="#3d5068" stroke-width="1"/>
+  <!-- Header/grid boundary -->
+  <line x1="0" y1="80"  x2="750" y2="80"  stroke="#3d5068" stroke-width="1"/>
+  <!-- Row dividers -->
+  <line x1="0" y1="140" x2="750" y2="140" stroke="#1a2535" stroke-width="1"/>
+  <line x1="0" y1="200" x2="750" y2="200" stroke="#1a2535" stroke-width="1"/>
+  <line x1="0" y1="260" x2="750" y2="260" stroke="#1a2535" stroke-width="1"/>
+  <line x1="0" y1="320" x2="750" y2="320" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- Vertical dividers -->
+  <!-- Row header / grid boundary -->
+  <line x1="185" y1="38"  x2="185" y2="380" stroke="#3d5068" stroke-width="1"/>
+  <!-- Column dividers -->
+  <line x1="298" y1="38"  x2="298" y2="380" stroke="#1a2535" stroke-width="1"/>
+  <line x1="411" y1="38"  x2="411" y2="380" stroke="#1a2535" stroke-width="1"/>
+  <line x1="524" y1="38"  x2="524" y2="380" stroke="#1a2535" stroke-width="1"/>
+  <line x1="637" y1="38"  x2="637" y2="380" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- Title bottom separator (accent) -->
+  <line x1="0" y1="38" x2="750" y2="38" stroke="#0af0c8" stroke-width="1" opacity="0.4"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: TEXT                                                 -->
+  <!-- ============================================================ -->
+
+  <!-- TITLE -->
+  <!-- "PLATFORM SUPPORT MATRIX" — 23 chars * 13px * 0.52 = 155px, centered in 750 -->
+  <text x="375" y="25"
+        font-family="'Share Tech Mono', monospace"
+        font-size="14"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="3">PLATFORM SUPPORT MATRIX</text>
+
+  <!-- COLUMN HEADERS — centered in each column, y=38+21=59 (mid of 42px strip) -->
+  <!-- All column headers at 11px minimum per visual-output-standards brand artwork rule -->
+  <!-- Claude Code: center x = 185 + 56.5 = 241.5 -->
+  <!-- "CLAUDE CODE" = 11 chars * 11px * 0.52 = 62.9px, fits in 113px column -->
+  <text x="241" y="59"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">CLAUDE CODE</text>
+
+  <!-- Gemini CLI: center x = 298 + 56.5 = 354.5 -->
+  <!-- "GEMINI CLI" = 10 chars * 11px * 0.52 = 57.2px, fits -->
+  <text x="354" y="59"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">GEMINI CLI</text>
+
+  <!-- Copilot CLI: center x = 411 + 56.5 = 467.5 -->
+  <!-- "COPILOT CLI" = 11 chars * 11px * 0.52 = 62.9px, fits -->
+  <text x="467" y="59"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">COPILOT CLI</text>
+
+  <!-- Cursor/Windsurf: center x = 524 + 56.5 = 580.5 -->
+  <!-- Two lines at 11px: "CURSOR /" = 8 chars * 11 * 0.52 = 45.8px; "WINDSURF" = 8 * 11 * 0.52 = 45.8px -->
+  <!-- Two lines spaced 14px apart, centered in 42px strip: y=49 and y=68 -->
+  <text x="580" y="49"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">CURSOR /</text>
+  <text x="580" y="68"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">WINDSURF</text>
+
+  <!-- Raw API / ChatGPT: center x = 637 + 56.5 = 693.5 -->
+  <!-- Two lines at 11px: "RAW API /" = 9 chars * 11 * 0.52 = 51.5px; "CHATGPT" = 7 * 11 * 0.52 = 40px -->
+  <text x="693" y="49"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">RAW API /</text>
+  <text x="693" y="68"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#a8bcd0"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="1">CHATGPT</text>
+
+  <!-- ROW HEADERS — left-aligned at x=12, vertically centered in each row -->
+  <!-- Row 0: y=80, center=110 -->
+  <text x="12" y="104"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#7a9ab8"
+        dominant-baseline="middle">Skill() auto-dispatch</text>
+
+  <!-- Row 1: y=140, center=170 -->
+  <text x="12" y="164"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#7a9ab8"
+        dominant-baseline="middle">Persistent loading</text>
+
+  <!-- Row 2: y=200, center=230 -->
+  <text x="12" y="224"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#7a9ab8"
+        dominant-baseline="middle">art-direction trigger</text>
+
+  <!-- Row 3: y=260, center=290 -->
+  <text x="12" y="284"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#7a9ab8"
+        dominant-baseline="middle">git / gh operations</text>
+
+  <!-- Row 4: y=320, center=350 -->
+  <text x="12" y="344"
+        font-family="'Share Tech Mono', monospace"
+        font-size="11"
+        fill="#7a9ab8"
+        dominant-baseline="middle">Web search + images</text>
+
+  <!-- DATA CELL LABELS -->
+  <!-- Cell centers: column x-center offset from column left = 56.5px -->
+  <!-- Row vertical centers: 110, 170, 230, 290, 350 -->
+
+  <!-- ROW 0: Skill() auto-dispatch -->
+  <!-- AUTO cells: teal -->
+  <text x="241" y="110"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="354" y="110"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="467" y="110"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <!-- MANUAL cells: orange -->
+  <text x="580" y="110"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+  <text x="693" y="110"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+
+  <!-- ROW 1: Persistent skill loading -->
+  <text x="241" y="170"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="354" y="170"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="467" y="170"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="580" y="170"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+  <text x="693" y="170"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+
+  <!-- ROW 2: art-direction auto-trigger -->
+  <text x="241" y="230"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="354" y="230"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="467" y="230"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="580" y="230"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+  <text x="693" y="230"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+
+  <!-- ROW 3: git / gh operations — all AUTO except Raw API -->
+  <text x="241" y="290"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="354" y="290"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="467" y="290"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="580" y="290"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="693" y="290"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#f06020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">MANUAL</text>
+
+  <!-- ROW 4: Web search + image fetch -->
+  <text x="241" y="350"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="354" y="350"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <text x="467" y="350"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#0af0c8"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">AUTO</text>
+  <!-- LIMITED cells: muted amber/gold, readable on dark -->
+  <text x="580" y="350"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#c8a020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">LIMITED</text>
+  <text x="693" y="350"
+        font-family="'Share Tech Mono', monospace"
+        font-size="12"
+        fill="#c8a020"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-weight="bold">LIMITED</text>
+
+</svg>
