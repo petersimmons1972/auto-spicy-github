@@ -175,7 +175,7 @@
         letter-spacing="3">PLATFORM SUPPORT MATRIX</text>
 
   <!-- COLUMN HEADERS — centered in each column, y=38+21=59 (mid of 42px strip) -->
-  <!-- All column headers at 11px minimum per visual-output-standards brand artwork rule -->
+  <!-- All column headers at 11px minimum per the brand artwork minimum font rule -->
   <!-- Claude Code: center x = 185 + 56.5 = 241.5 -->
   <!-- "CLAUDE CODE" = 11 chars * 11px * 0.52 = 62.9px, fits in 113px column -->
   <text x="241" y="59"

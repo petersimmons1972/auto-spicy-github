@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 # install.sh — installs auto-spicy-github skills into ~/.claude/skills/
 #
-# Copies the three skills (github-docs, visual-output-standards, art-direction)
-# and the VISUAL-IDENTITY.md template into the user's Claude skills directory
+# Copies the art-direction skill and the VISUAL-IDENTITY.md template into the user's Claude skills directory
 # so they are available in any Claude Code session.
 #
 # Usage: ./install.sh
@@ -15,7 +14,8 @@ TEMPLATE_SRC="$(cd "$(dirname "$0")/templates" && pwd)"
 SKILLS_DEST="$HOME/.claude/skills"
 TEMPLATE_DEST="$HOME/.claude/skills/auto-spicy-github-template"
 
-SKILLS="github-docs visual-output-standards art-direction"
+# clearwatch-visual-standards is deliberately not installed: the founder invokes it manually.
+SKILLS="art-direction"
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -121,9 +121,7 @@ fi
 
 printf "\n"
 printf "To use in any Claude Code session, invoke:\n"
-printf "  /github-docs            — generate art-directed GitHub docs\n"
 printf "  /art-direction          — establish visual identity for a repo\n"
-printf "  /visual-output-standards — canonical chart + SVG quality rules\n"
 printf "\n"
 printf "VISUAL-IDENTITY.md template is at:\n"
 printf "  %s\n" "$template_dest"
