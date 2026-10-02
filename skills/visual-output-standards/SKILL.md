@@ -79,6 +79,15 @@ If estimated text width exceeds 75% of the container, the text WILL overflow on 
 
 All polygon vertices MUST be computed from a single stated center point. No eyeballed coordinates. If you cannot state the center `(cx, cy)` and the computation for each vertex, the geometry is unverifiable.
 
+### XML Comment Syntax
+
+A double hyphen (`--`) inside an XML comment is forbidden by the XML 1.0 spec and makes the file fail to parse, so the SVG will not load at all.
+
+- Section dividers: use `=` characters (`<!-- =================== -->`), not dashes.
+- Connector phrases: use `:` or a space (`<!-- Zone A: far left -->`), not `--`.
+
+After creating an SVG, confirm it parses before any visual review: `python3 -c "import xml.etree.ElementTree as ET; ET.parse('file.svg'); print('valid')"`. An SVG that fails to parse is a zero; fix it first.
+
 ### ViewBox and Namespace
 
 Every SVG root element MUST have:

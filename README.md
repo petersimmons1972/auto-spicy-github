@@ -51,9 +51,10 @@ Every run after that: reads the committed identity and goes straight to work.
 
 | Skill | What it does |
 |-------|-------------|
-| `github-docs` | The 9-step pipeline: audit, prose, SVGs, artwork, commit |
+| `github-docs` | The documentation refresh pipeline (outcome checklist): audit, prose, SVGs, artwork, commit |
 | `art-direction` | Visual identity discovery conversation |
 | `visual-output-standards` | SVG and chart craft rules loaded before any visual creation |
+| `clearwatch-visual-standards` | Optional Clearwatch overlay: palette, vendor colors and chart constants; load with `visual-output-standards` |
 
 ---
 

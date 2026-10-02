@@ -15,7 +15,7 @@ The goal: author a `VISUAL-IDENTITY.md` that reflects *this project's* personali
 
 Before running the discovery conversation, check if the user has a design skill installed:
 
-Scan `~/.claude/skills/` for any skill with "design", "ui", "ux", or "visual" in the name or description.
+Look through the installed skills (your harness's skill list, or the skill directories such as `~/.agents/skills` and `~/.claude/skills`) for any skill with "design", "ui", "ux", or "visual" in the name or description.
 
 If multiple matching skills are found, list them all and ask the user to choose one before continuing.
 
@@ -26,7 +26,7 @@ If one is found, prompt:
 > - **no** — I'll ask you questions and build a custom identity from scratch
 > - **both** — ask me the questions, then we'll pick specific options from [skill-name] that match your answers"
 
-**Recommended default:** `ui-ux-pro-max` from skills.sh gives access to 50 styles, 21 palettes, and 50 font pairings. It's the recommended starting point if you do not have a strong visual preference. See the [skills.sh listing](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) for install instructions.
+**Recommended default:** `ui-ux-pro-max` from skills.sh is a good starting point if you do not have a strong visual preference. See the [skills.sh listing](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) for install instructions.
 
 If no design skill is found, proceed directly to Step 2.
 
@@ -103,6 +103,16 @@ Based on the discovery answers, author `docs/assets/VISUAL-IDENTITY.md` using th
 [List any committed SVGs, logos, or posters already in docs/assets/, or "None yet"]
 ```
 
+**Named defaults to avoid.** Without direction, frontend and visual work falls back on a few stock styles, and a vague "avoid a generic look" just swaps one default for another. Unless the discovery answers or the project's brand ask for them, do not use:
+- a cream or off-white paper background with a serif display face
+- italic accent words inside headlines
+- numbered "01 / 02 / 03" section labels
+- small monospace uppercase labels and eyebrow text
+- pill-shaped buttons and tags
+- purple-to-blue gradient hero backgrounds
+- a three-card icon grid under the hero
+If the first draft lands on one of these, pick a different direction from the discovery answers and extend this list with whatever the draft used.
+
 **Palette derivation rules:**
 - Derive from discovery answers. If the user said "dark and technical" — dark background, high-contrast text, minimal accent.
 - If no color preference was given and no design skill is installed, pick a purposeful palette based on the project's domain (dev tool? security? consumer app?) rather than defaulting to generic gray.
@@ -129,7 +139,7 @@ Signal completion by outputting:
 VISUAL-IDENTITY.md authored at docs/assets/VISUAL-IDENTITY.md — art-direction complete
 ```
 
-If this skill was invoked from the `github-docs` pipeline, the pipeline will now continue from Step 3 (Audit). If running standalone, the skill is complete.
+If this skill was invoked from the `github-docs` pipeline, the pipeline will now continue with the visual state audit. If running standalone, the skill is complete.
 
 ---
 
