@@ -13,8 +13,8 @@ Option 2 — Let the art-direction skill generate it:
   questions about your project's personality and generate a complete,
   filled-in VISUAL-IDENTITY.md automatically.
 
-Once this file exists at docs/assets/VISUAL-IDENTITY.md, the github-docs
-skill will read it and apply your visual identity to every generated asset.
+Once this file exists at docs/assets/VISUAL-IDENTITY.md, visual work in
+the repo should read it and apply your visual identity to every generated asset.
 -->
 
 ## Theme

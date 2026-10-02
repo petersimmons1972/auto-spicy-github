@@ -139,7 +139,7 @@ Signal completion by outputting:
 VISUAL-IDENTITY.md authored at docs/assets/VISUAL-IDENTITY.md — art-direction complete
 ```
 
-If this skill was invoked from the `github-docs` pipeline, the pipeline will now continue with the visual state audit. If running standalone, the skill is complete.
+When finished, tell the user the file is committed and ready for whatever visual work comes next.
 
 ---
 

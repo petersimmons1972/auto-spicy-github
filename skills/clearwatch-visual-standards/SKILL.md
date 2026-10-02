@@ -1,17 +1,30 @@
 ---
 name: clearwatch-visual-standards
-description: Clearwatch palette, vendor colors, chart constants and chart-type rules. Use together with visual-output-standards when producing charts or brand artwork for Clearwatch (reports, Substack, LinkedIn); not for other projects.
+description: "Clearwatch visual standard for charts and brand artwork: SVG craft rules, palette, vendor colors, chart constants and chart-type rules. Invoked manually for Clearwatch work (reports, Substack, LinkedIn); not for other projects."
 ---
 
-# Clearwatch Visual Standards (overlay)
+# Clearwatch Visual Standards
 
-This is the Clearwatch-specific layer on top of the generic `visual-output-standards` skill. Load `visual-output-standards` first for the universal SVG craft rules (paint order, geometry, character set, XML comment syntax, checklist), then apply the Clearwatch palette, constants and chart rules below. For any other project, use that project's own `docs/assets/VISUAL-IDENTITY.md` instead and do not load this skill.
+Standalone visual quality standard for Clearwatch charts and brand artwork (reports, Substack, LinkedIn). Read it before creating any SVG, chart, or illustration for Clearwatch. It is invoked manually and depends on no other skill. For any other project, use that project's own `docs/assets/VISUAL-IDENTITY.md` and do not load this skill.
 
 The constants below exist in the Clearwatch repo (`pipeline/design_constants.py`, `pipeline/validators/chart_preflight_check.py`) and are enforced there for charts; for brand artwork, verify manually.
 
 ---
 
-## 1. Clearwatch Type Constants
+## 0. Universal SVG Craft Rules
+
+1. **Paint order.** Draw backgrounds first, then decorative shapes, then data marks, then text last. Never draw a text element before an opaque fill that overlaps its bounding box: the markup is valid but the text is hidden. Check z-order explicitly after computing layout.
+2. **Round motifs on a baseline.** A decorative disc whose diameter sits on a horizontal bar must be built as an upper-semicircle `<path>` (`M x-r y A r r 0 0 1 x+r y Z`; sweep-flag 1 bulges upward on a y-down canvas), not a full `<circle>`, or its lower half hangs below the bar.
+3. **Text widths.** Estimate widths with `CHAR_WIDTH_REGULAR_FACTOR` / `CHAR_WIDTH_BOLD_FACTOR` from `design_constants`, and keep text inside its container with margin.
+4. **Character set.** Use plain ASCII or XML entities; Unicode arrows and symbols render inconsistently across fonts (a missing-glyph box on Firefox/Linux).
+5. **XML comments.** A double hyphen inside an XML comment is forbidden by XML 1.0 and the file fails to parse. Dividers use `=` characters, connectors use `:` or a space. After creating an SVG, confirm it parses: `python3 -c "import xml.etree.ElementTree as ET; ET.parse('file.svg'); print('valid')"`. An SVG that fails to parse is a zero.
+6. **Root element.** `viewBox`, `xmlns="http://www.w3.org/2000/svg"` and `width="100%"`. State the effective rendering width alongside the viewBox: charts `0 0 1310 620` at full report width, Substack `0 0 1200 600` (about 680px rendered), LinkedIn feed 1200x628.
+7. **Text as text.** Readable text is always `<text>`, never paths; gradients live in `<defs>`.
+8. **Final check.** Nothing truncated at the right or bottom edges, and all text meets 4.5:1 contrast (WCAG AA).
+
+---
+
+## 1. Type Constants
 
 | Context | Minimum | Source |
 |---------|---------|--------|
@@ -185,7 +198,7 @@ For illustrations, diagrams, and visual content outside the Clearwatch automated
 
 1. **Before creating:** Read this entire skill. All rules are hard requirements, not suggestions.
 2. **State the rendering context** in your opening plan: target platform, viewBox dimensions, effective rendering width.
-3. **Create the artwork** following the generic craft rules and Sections 1-3 above.
+3. **Create the artwork** following Sections 0-3 above.
 4. **Run render check:** `bin/render-check.sh <output-file>` — confirms text clipping, occlusion, and contrast.
 5. **Then call Ramsay** for code quality confirmation. Ramsay is the code gate; you already passed the render gate.
 6. **Human reviews** the rendered output as final gate.
@@ -209,7 +222,7 @@ This skill grows over time. Every failure makes the next creation better.
 
 | What | Where | Role |
 |------|-------|------|
-| This skill | `visual-output-standards` skill (generic craft) plus this overlay (Clearwatch palette/constants) | Canonical rules (prose) |
+| This skill | `skills/clearwatch-visual-standards/SKILL.md` | Canonical rules (prose) |
 | `design_constants.py` | `pipeline/design_constants.py` | Machine-readable constants |
 | `ChartPreflightCheck` | `pipeline/validators/chart_preflight_check.py` | Runtime enforcement |
 | `bin/render-check.sh` | `bin/render-check.sh` | Manual render validation |

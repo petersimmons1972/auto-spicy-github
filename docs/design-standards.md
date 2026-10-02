@@ -3,13 +3,13 @@
 ![Design standard resolution chain](assets/svg/design-priority-chain.svg)
 *VISUAL-IDENTITY.md always wins. Everything else is the path to creating it.*
 
-## How the pipeline resolves visual standards
+## How visual standards are resolved
 
-Every run of `github-docs` resolves the visual standard before touching any prose or SVG. The resolution order is fixed:
+Visual work resolves the standard before creating any asset. The resolution order is fixed:
 
 ```
 VISUAL-IDENTITY.md (docs/assets/ in the target repo)
-  └─ exists? Use it. Proceed to Step 3.
+  └─ exists? Use it. Proceed with visual work.
      └─ absent?
           ↓
      Installed design skill (~/.claude/skills/)
@@ -18,10 +18,10 @@ VISUAL-IDENTITY.md (docs/assets/ in the target repo)
                  ↓
             Discovery conversation (art-direction skill)
               └─ 4 questions → VISUAL-IDENTITY.md authored and committed
-                   └─ Proceed to Step 3.
+                   └─ Proceed with visual work.
 ```
 
-`VISUAL-IDENTITY.md` always wins. If it exists, no questions are asked — the pipeline reads it and goes. Edit the file to change visual direction. Delete it to re-run the discovery conversation.
+`VISUAL-IDENTITY.md` always wins. If it exists, no questions are asked — visual work reads it and goes. Edit the file to change visual direction. Delete it to re-run the discovery conversation.
 
 ---
 

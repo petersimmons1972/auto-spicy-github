@@ -1,23 +1,17 @@
 # auto-spicy-github
 
-Give any GitHub repo beautiful, art-directed documentation with a single phrase.
-
-![github-docs pipeline overview](docs/assets/svg/pipeline-overview.svg)
-*Five-step pipeline: say the phrase, get art-directed docs committed.*
+Art direction skills for GitHub repos: establish a committed visual identity, and keep Clearwatch artwork on-brand.
 
 ## What it does
 
-Say `update the github documentation` to Claude Code and it:
+The `art-direction` skill:
 
 - Interviews you about your project's visual personality (4 questions, all optional)
-- Establishes a visual identity — palette, typography, imagery style — committed to your repo
-- Rewrites every doc page with real examples, second-person voice, zero filler
-- Generates SVG diagrams and charts matched to your aesthetic
-- Fetches public domain artwork from Wikimedia Commons, the Library of Congress, and the National Archives
-- Splits pages over 400 lines into focused topic-driven sub-pages
-- Commits everything with a structured message
+- Checks installed design skills (such as ui-ux-pro-max) as a starting reference
+- Authors `docs/assets/VISUAL-IDENTITY.md` (palette, typography, imagery style, SVG constraints) with concrete values and commits it
+- Steers away from stock default styles by naming them
 
-The docs you are reading right now were produced by this tool.
+The `github-docs` and `visual-output-standards` skills were retired (2026-10-02). Docs refresh and generic SVG craft are no longer part of this repo.
 
 ---
 
@@ -29,40 +23,30 @@ cd auto-spicy-github
 ./install.sh
 ```
 
-Three skills land in `~/.claude/skills/`. They are available immediately in any new Claude Code session.
+`art-direction` lands in `~/.claude/skills/` and is available in any new Claude Code session, along with a `VISUAL-IDENTITY.md` template.
 
 ---
 
 ## Use
 
-Open any repo in Claude Code and say:
-
-```
-update the github documentation
-```
-
-First run: Claude asks about your project's visual personality, commits a `VISUAL-IDENTITY.md`, then runs the full pipeline.
-
-Every run after that: reads the committed identity and goes straight to work.
+Open a repo in Claude Code and run `/art-direction`, or ask to establish or refresh the repo's visual identity.
 
 ---
 
-## What gets installed
+## What is in the repo
 
 | Skill | What it does |
 |-------|-------------|
-| `github-docs` | The documentation refresh pipeline (outcome checklist): audit, prose, SVGs, artwork, commit |
-| `art-direction` | Visual identity discovery conversation |
-| `visual-output-standards` | SVG and chart craft rules loaded before any visual creation |
-| `clearwatch-visual-standards` | Optional Clearwatch overlay: palette, vendor colors and chart constants; load with `visual-output-standards` |
+| `art-direction` | Visual identity discovery conversation; installed by `install.sh` |
+| `clearwatch-visual-standards` | Standalone Clearwatch standard: SVG craft rules, palette, vendor colors, chart constants. Not installed by `install.sh`; the founder invokes it manually |
 
 ---
 
 ## Bring your own design standard
 
-Works best with a design skill installed. [ui-ux-pro-max](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) — 50 styles, 21 palettes, 50 font pairings — is the recommended default. Install it and the pipeline detects it automatically, offering its library as a starting point before the discovery questions.
+Works best with a design skill installed. [ui-ux-pro-max](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) is the recommended default. Install it and `art-direction` detects it automatically, offering it as a starting point before the discovery questions.
 
-See [docs/design-standards.md](docs/design-standards.md) for the full priority chain.
+See [docs/design-standards.md](docs/design-standards.md) for the priority chain.
 
 ---
 
@@ -70,7 +54,7 @@ See [docs/design-standards.md](docs/design-standards.md) for the full priority c
 
 **Native:** Claude Code · Gemini CLI · Copilot CLI
 
-**Other platforms:** [ADAPTING.md](ADAPTING.md) — how to inline the skills into Cursor, ChatGPT, raw API calls, and anywhere else a capable LLM is running.
+**Other platforms:** [ADAPTING.md](ADAPTING.md) explains how to inline the skill elsewhere.
 
 ---
 
@@ -78,4 +62,3 @@ See [docs/design-standards.md](docs/design-standards.md) for the full priority c
 
 - Claude Code (authenticated)
 - Target repo open in a Claude Code session
-- GitHub CLI (`gh`) if you want automatic issue filing — optional
